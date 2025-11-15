@@ -32,85 +32,65 @@ Aura is a visionOS application that delivers real-time, on-device speech transcr
 
 ## Key Technologies
 
-SwiftUI for declarative interface design
+* SwiftUI for declarative interface design
+* RealityKit for spatial rendering and immersive placement
+* AVFoundation for capturing microphone audio
+* Speech Framework for live transcription
+* SoundAnalysis Framework for environmental sound classification
+* @Observable for reactive and efficient state updates
 
-RealityKit for spatial rendering and immersive placement
 
-AVFoundation for capturing microphone audio
+<br>
 
-Speech Framework for live transcription
+## How It Works
 
-SoundAnalysis Framework for environmental sound classification
+* Audio is captured using AVFoundation
+* The stream is processed simultaneously by:
+* Speech framework for transcription
+* SoundAnalysis for classifying environmental sounds
+* SwiftUI views are rendered into UIImages, converted into TextureResources, and displayed inside RealityKit as floating spatial elements
 
-@Observable for reactive and efficient state updates
 
-How It Works
+<br>
 
-Audio is captured using AVFoundation
+## Project Setup
 
-The stream is processed simultaneously by:
-
-Speech framework for transcription
-
-SoundAnalysis for classifying environmental sounds
-
-SwiftUI views are rendered into UIImages, converted into TextureResources, and displayed inside RealityKit as floating spatial elements
-
-Project Setup
-
-Clone the repository
-
-Open the project in Xcode
-
-Run on the visionOS Simulator or a physical Vision Pro
-
-Grant Microphone and Speech Recognition permissions on the first launch
+--> Clone the repository
+--> Open the project in Xcode
+--> Run on the visionOS Simulator or a physical Vision Pro
+--> Grant Microphone and Speech Recognition permissions on the first launch
 
 There are no external dependencies.
 
 
+<br>
 
-Limitations and Future Scope
-Directional Audio Awareness (Planned)
+## Limitations and Future Scope
+### Directional Audio Awareness (Planned)
+* Early code for azimuth detection exists
+* UI currently does not display sound direction
+* Future goal: show where a sound is coming from
 
-Early code for azimuth detection exists
+### Emergency Awareness Mode (Planned)
+* A major upcoming feature aims to increase personal safety at home:
+* Detects urgent sounds (fire alarms, smoke detectors, breaking glass, distress cues)
+* Identifies visual emergency indicators (small fires, hazardous events)
+* Provides immediate instructions on what to do next
+* Offers an instant Call 911 button for rapid emergency response
+* This feature will help users who may not hear or notice dangerous situations, making Aura not just an accessibility tool but a safety companion.
 
-UI currently does not display sound direction
+### Expanded Sound Library
+* More environmental sound classes
+* Enhanced context-aware alerts
 
-Future goal: show where a sound is coming from
 
-Emergency Awareness Mode (Planned)
+<br>
 
-A major upcoming feature aims to increase personal safety at home:
-
-Detects urgent sounds (fire alarms, smoke detectors, breaking glass, distress cues)
-
-Identifies visual emergency indicators (small fires, hazardous events)
-
-Provides immediate instructions on what to do next
-
-Offers an instant Call 911 button for rapid emergency response
-
-This feature will help users who may not hear or notice dangerous situations, making Aura not just an accessibility tool but a safety companion.
-
-Expanded Sound Library
-
-More environmental sound classes
-
-Enhanced context-aware alerts
-
-Acknowledgements
+## Acknowledgements
 
 This project was created during a hackathon hosted by:
 
-LA Tech Week
+* LA Tech Week
+* USC Information Sciences Institute (ISI)
+* Lovable
 
-USC Information Sciences Institute (ISI)
-
-Lovable
-
-LA Tech Week
-
-USC Information Sciences Institute (ISI)
-
-Lovable
