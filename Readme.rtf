@@ -1,33 +1,90 @@
-Aura
+# Aura
 
-Aura is a visionOS application for real-time, on-device transcription and environmental sound awareness. It enhances user perception by overlaying live conversational text and sound alerts in both a standard 2D window and a fully immersive space, with a core focus on privacy.
+Aura is a visionOS application that brings real-time speech transcription and environmental sound awareness directly into your field of view. Designed with privacy and accessibility at its core, Aura overlays live captions and sound cues in both a standard 2D window and a fully immersive spatial environment. Everything runs on-device, ensuring fast performance and complete privacy.
 
-Core Features
-	•	On-Device Processing: Provides real-time, private audio processing by running both transcription and sound analysis directly on the device.
-	•	Intelligent Text Segmentation: Automatically breaks the live transcript into readable sentences and phrases by detecting natural pauses and punctuation.
-	•	Multi-Language Support: Allows users to change the speech recognition language on the fly from a pre-defined list that includes English, Spanish, Hindi, and more.
-	•	Dual Interface: Offers both a 2D window panel for the shared space and a fully immersive experience where the UI floats and follows the user's gaze.
+## Core Features
+* Real-Time, On-Device Processing
+* All transcription and sound classification runs locally, keeping audio private while delivering fast, reliable results.
+* Intelligent Text Segmentation
+
+Aura breaks continuous speech into clean, readable sentences and phrases by detecting natural pauses and punctuation patterns.
+
+Multi-Language Support
+
+Users can switch speech recognition languages instantly, with options including English, Spanish, Hindi, and more.
+
+Dual Interface Modes
+
+Choose between:
+
+A compact 2D floating panel for shared space
+
+A fully immersive RealityKit experience where the UI gently follows the user’s gaze
 
 Key Technologies
-	•	UI: SwiftUI and RealityKit.
-	•	Audio Processing: AVFoundation for microphone input.
-	•	Speech Recognition: Speech framework for live, on-device transcription.
-	•	Sound Analysis: SoundAnalysis framework for environmental sound classification.
-	•	State Management: @Observable for reactive state updates.
 
-Technical Implementation
+SwiftUI for declarative and adaptive UI
 
-The application uses AVFoundation to capture microphone input. This audio stream is simultaneously processed by the Speech framework for live transcription and the SoundAnalysis framework for environmental sound classification.
-The immersive view panel is created by rendering a SwiftUI view into a UIImage, which is then converted into a TextureResource. This texture is applied to a ModelEntity plane in RealityKit, allowing for a dynamic and responsive UI driven entirely by SwiftUI within a 3D space.
+RealityKit for spatial rendering and immersive placement
+
+AVFoundation to capture microphone input
+
+Speech framework for live, on-device transcription
+
+SoundAnalysis for detecting and classifying environmental audio events
+
+@Observable for reactive, low-latency state management
+
+How It Works
+
+Aura captures microphone input using AVFoundation and sends the audio stream to both:
+
+The Speech framework for live transcription
+
+The SoundAnalysis framework for environmental sound classification
+
+For the immersive UI, Aura renders SwiftUI views into UIImages, converts them into TextureResources, and maps them onto RealityKit ModelEntities, allowing the interface to float naturally within the spatial environment.
 
 Project Setup
 
-This project is built natively for visionOS and has no external dependencies. Simply open it in Xcode and run it on the visionOS simulator or a physical device. You will need to grant Microphone and Speech Recognition permissions on the first launch.
+Clone the repository
 
-Limitations and Future Work
+Open the project in Xcode
 
-Currently, the application does not determine the direction of incoming sounds. While the underlying audio monitor has initial code for azimuth detection from stereo input, this feature is not yet exposed in the UI and is considered a primary goal for future development as hardware capabilities evolve.
+Run on the visionOS Simulator or a physical Apple Vision Pro
+
+On first launch, grant Microphone and Speech Recognition permissions
+
+No external dependencies are required.
+
+Limitations and Future Scope
+
+Aura is still in its early stages, and several enhancements are planned:
+
+Directional Audio Awareness
+
+While early code for azimuth detection exists, the current UI does not surface direction-of-arrival data. Future versions aim to indicate where a sound is coming from, not just what it is.
+
+Emergency Awareness Mode (Upcoming)
+
+We plan to introduce intelligent emergency detection for home use.
+Aura will be able to:
+
+Recognize urgent sounds such as fire alarms, smoke detectors, breaking glass, and distress cues
+
+Detect visual emergency indicators in the environment, like small fires or hazardous situations
+
+Deliver immediate instructions on what to do
+
+Allow users to quickly call emergency services such as 911 directly through an on-screen prompt
+
+This feature is designed to support users who may miss critical sounds, creating a safer and more informed home environment.
+
+Extended Sound Library
+
+More sound classes and context-aware alerts will be added as the underlying models evolve.
 
 Acknowledgements
 
-This project was created as a part of a hackathon hosted by LA Tech Week, the USC Information Sciences Institute (ISI), and Lovable.
+Aura was created during a hackathon hosted by LA Tech Week, the USC Information Sciences Institute (ISI), and Lovable.
+Thank you to the organizers, mentors, and everyone who supported the project.
