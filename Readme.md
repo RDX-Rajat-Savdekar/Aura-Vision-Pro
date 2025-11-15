@@ -55,12 +55,12 @@ Aura is a visionOS application that delivers real-time, on-device speech transcr
 
 ## Project Setup
 
---> Clone the repository
---> Open the project in Xcode
---> Run on the visionOS Simulator or a physical Vision Pro
---> Grant Microphone and Speech Recognition permissions on the first launch
+--> Clone the repository<\n>
+--> Open the project in Xcode<\n>
+--> Run on the visionOS Simulator or a physical Vision Pro<\n>
+--> Grant Microphone and Speech Recognition permissions on the first launch<\n>
 
-There are no external dependencies.
+There are no external dependencies.<\n>
 
 
 <br>
