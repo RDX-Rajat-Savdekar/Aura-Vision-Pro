@@ -1,159 +1,113 @@
-# Aura
-
-**Live captions + environmental sound alerts on Apple Vision Pro — entirely on-device.**
-
-Built in **24 hours** at LA Tech Week / USC ISI (Oct 2025) · **2nd place** · zero cloud dependencies.
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=3KEH2BCODBo">
+    <img src="docs/assets/video-design-thumb.jpg" alt="Aura system design walkthrough on YouTube" width="720" />
+  </a>
+</p>
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=HbW9F2zjmLQ"><strong>▶ Full hackathon demo</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://www.youtube.com/clip/UgkxpRDpwatHZPRf5Oyjow0mAWBwYbVKn7rI"><strong>60 s clip</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/RDX-Rajat-Savdekar/Manim-DSA-SD-Concepts/tree/main/Aura/design-video"><strong>System design walkthrough</strong></a>
+  <strong>Aura</strong> — live captions + sound alerts on Apple Vision Pro · <strong>100% on-device</strong>
+  <br />
+  <sub>24 h hackathon · LA Tech Week / USC ISI · Oct 2025 · <strong>2nd place</strong></sub>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=3KEH2BCODBo"><img src="https://img.shields.io/badge/▶_System_design_video-9_min-red?style=for-the-badge&logo=youtube" alt="System design video" /></a>
+  &nbsp;
+  <a href="https://www.youtube.com/watch?v=HbW9F2zjmLQ"><img src="https://img.shields.io/badge/▶_Hackathon_demo-2_min-white?style=for-the-badge&logo=youtube" alt="Hackathon demo" /></a>
+  &nbsp;
+  <a href="https://www.youtube.com/clip/UgkxpRDpwatHZPRf5Oyjow0mAWBwYbVKn7rI"><img src="https://img.shields.io/badge/▶_60s_clip-visionOS-blue?style=for-the-badge&logo=youtube" alt="60 second clip" /></a>
 </p>
 
 ---
 
-## Watch
+## ▶ Start here
 
-| | Link |
-|---|---|
-| **Full hackathon demo** (teammates present · ~2:37) | [youtube.com/watch?v=HbW9F2zjmLQ](https://www.youtube.com/watch?v=HbW9F2zjmLQ) |
-| **60-second highlight** | [youtube.com/clip/UgkxpRDpwatHZPRf5Oyjow0mAWBwYbVKn7rI](https://www.youtube.com/clip/UgkxpRDpwatHZPRf5Oyjow0mAWBwYbVKn7rI) |
-| **System design video** (~9 min · Manim + VO) | [Manim-DSA-SD-Concepts / Aura/design-video](https://github.com/RDX-Rajat-Savdekar/Manim-DSA-SD-Concepts/tree/main/Aura/design-video) |
-
----
-
-## Demo snapshots
-
-Real Vision Pro footage from the hackathon — live speech, sound classification, locale hot-swap.
-
-<p align="center">
-  <img src="docs/assets/demo-live-captions.png" alt="Aura live English captions on Vision Pro" width="31%" />
-  <img src="docs/assets/demo-emergency-sound.png" alt="Emergency vehicle sound detected alongside speech and whispering" width="31%" />
-  <img src="docs/assets/demo-locale-swap.png" alt="Japanese locale picker with live transcription" width="31%" />
-</p>
-
-<p align="center">
-  <sub><b>Left:</b> live captions &nbsp;·&nbsp; <b>Center:</b> siren → emergency vehicle alert &nbsp;·&nbsp; <b>Right:</b> locale hot-swap (EN ↔ JA)</sub>
-</p>
+| | |
+|:---:|:---|
+| <a href="https://www.youtube.com/watch?v=3KEH2BCODBo"><img src="docs/assets/video-design-thumb.jpg" width="220" /><br /><sub><b>System design walkthrough</b><br />~9 min · Manim + VO</sub></a> | What we built, rejected, and why — architecture postmortem with Swift snippets |
+| <a href="https://www.youtube.com/watch?v=HbW9F2zjmLQ"><img src="docs/assets/video-demo-thumb.jpg" width="220" /><br /><sub><b>Hackathon demo</b><br />~2:37 · Vision Pro</sub></a> | Teammates present · live captions · siren · clapping · locale swap |
+| <a href="https://www.youtube.com/clip/UgkxpRDpwatHZPRf5Oyjow0mAWBwYbVKn7rI"><img src="docs/assets/demo-live-captions.png" width="220" /><br /><sub><b>60 s highlight</b></sub></a> | Quick recruiter cut |
 
 ---
 
-## System design walkthrough
-
-A separate **architecture postmortem** explains what we shipped, cut, and why — with Manim diagrams, Swift snippets, and hackathon B-roll.
+## On Vision Pro
 
 <p align="center">
-  <img src="docs/assets/design-problem-hackathon.png" alt="Manim frame — situational audio gap and hackathon scope" width="48%" />
-  <img src="docs/assets/design-dual-pipeline.png" alt="Manim frame — single AVAudioEngine tap dual pipeline" width="48%" />
+  <img src="docs/assets/demo-live-captions.png" width="32%" alt="Live English captions" />
+  <img src="docs/assets/demo-emergency-sound.png" width="32%" alt="Emergency vehicle detected" />
+  <img src="docs/assets/demo-locale-swap.png" width="32%" alt="Japanese locale hot-swap" />
 </p>
 
 <p align="center">
-  <img src="docs/assets/design-outro.png" alt="Manim frame — 2nd place Oct 2025 outro card" width="60%" />
-</p>
-
-<p align="center">
-  <sub>From the <a href="https://github.com/RDX-Rajat-Savdekar/Manim-DSA-SD-Concepts/tree/main/Aura/design-video">design-video</a> series · source + renders in the Manim repo</sub>
+  <b>Live captions</b> &nbsp;·&nbsp; <b>Sound alerts</b> (siren → emergency vehicle) &nbsp;·&nbsp; <b>7 locales</b> without restart
 </p>
 
 ---
 
-## What it does
+## From the design video
 
-Deaf and hard-of-hearing users miss **situational audio** — speech in a noisy room, sirens, clapping, whispers. Aura captures mic input on Vision Pro and surfaces:
+Frames from [the walkthrough](https://www.youtube.com/watch?v=3KEH2BCODBo) — click through on YouTube for chapters.
 
-- **Live captions** (on-device Speech framework)
-- **Environmental sound alerts** (on-device SoundAnalysis)
-- **No audio leaves the headset** — privacy-first, no cloud ASR
+<p align="center">
+  <img src="docs/assets/design-problem.png" width="48%" alt="Situational audio gap" />
+  <img src="docs/assets/design-on-device.png" width="48%" alt="On-device only decision" />
+</p>
 
-One `AVAudioEngine` tap feeds both pipelines in parallel. Captions are segmented into readable sentences; classifier output is gated so labels do not flap.
+<p align="center">
+  <img src="docs/assets/design-dual-pipeline.png" width="48%" alt="Single AVAudioEngine tap" />
+  <img src="docs/assets/design-segmentation.png" width="48%" alt="Caption segmentation" />
+</p>
 
----
-
-## Core features
-
-| Feature | Detail |
-|---------|--------|
-| **On-device only** | Speech + SoundAnalysis run locally — no network |
-| **Dual pipeline** | Single mic tap → parallel speech + sound paths |
-| **Segmentation** | Pause detection + sentence splitter for readable captions |
-| **7 locales** | Hot-swap recognition language without restarting the engine |
-| **2D HUD** | SwiftUI floating panel (what we demoed and shipped) |
-| **Spatial HUD** | RealityKit texture-baked panel (explored; see design video) |
+<p align="center">
+  <img src="docs/assets/design-hud.png" width="48%" alt="Rejected directional pins" />
+  <img src="docs/assets/design-outro.png" width="48%" alt="2nd place Oct 2025" />
+</p>
 
 ---
 
-## How it works
+## Under the hood
+
+<p align="center">
+  <img src="docs/assets/design-dual-pipeline.png" width="70%" alt="Dual pipeline diagram" />
+</p>
+
+<p align="center">
+  One mic tap → Speech + SoundAnalysis · serial analysis queue · MainActor UI bridge
+  <br />
+  <code>MicrophoneMonitor.swift</code> · <code>ContentView.swift</code> · <code>ImmersiveView.swift</code>
+</p>
+
+<p align="center">
+  Swift · SwiftUI · visionOS · RealityKit · AVFoundation · Speech · SoundAnalysis
+  <br />
+  <sub>No external dependencies · Apple's on-device models (integrated, not trained)</sub>
+</p>
+
+---
+
+## Run it
 
 ```
-Mic (AVAudioEngine tap)
-  ├─► Speech framework        → live captions → SwiftUI HUD
-  └─► SoundAnalysis (serial queue) → sound labels → alerts
+git clone https://github.com/RDX-Rajat-Savdekar/Aura-Vision-Pro
+open Aura.xcodeproj
+# Run on visionOS Simulator or Vision Pro · allow Mic + Speech
 ```
 
-- Audio captured with **AVFoundation** · processed on a **serial analysis queue** so the realtime tap never blocks
-- ML callbacks bridged to **MainActor** for `@Published` UI updates
-- Spatial UI path: SwiftUI views rasterized to **TextureResource** for RealityKit billboards
-
-Key files: `MicrophoneMonitor.swift` · `ContentView.swift` · `ImmersiveView.swift`
-
 ---
 
-## Tech stack
-
-Swift · SwiftUI · visionOS · RealityKit · AVFoundation · Speech · SoundAnalysis · Accelerate (`vDSP`)
-
-No external dependencies.
-
----
-
-## Project setup
-
-1. Clone this repo
-2. Open `Aura.xcodeproj` in Xcode
-3. Run on **visionOS Simulator** or a physical **Apple Vision Pro**
-4. Grant **Microphone** and **Speech Recognition** on first launch
-
----
-
-## Hackathon context
+## Context
 
 | | |
 |---|---|
-| **When** | Oct 2025 · ~24 h build window |
-| **Event** | LA Tech Week · USC ISI · Lovable |
-| **Team** | Fardeen Khan · Namratha V Patil · Rajat Savdekar |
-| **Who coded** | Rajat (all Swift / pipeline) |
-| **Who presented** | Teammates on camera in the [full demo](https://www.youtube.com/watch?v=HbW9F2zjmLQ) |
-| **Outcome** | **2nd place** · working prototype · zero external deps |
+| **Built in** | ~24 h · Oct 2025 |
+| **Coded by** | Rajat Savdekar |
+| **Presented by** | Fardeen Khan · Namratha V Patil |
+| **Status** | Hackathon prototype — not production |
 
-> **Honesty:** Hackathon prototype — not production, not benchmarked. Models are Apple's on-device Core ML (integrated, not trained). Directional sound pins were explored but not shipped in the demo UI.
+Manim source for the walkthrough: [Manim-DSA-SD-Concepts / Aura/design-video](https://github.com/RDX-Rajat-Savdekar/Manim-DSA-SD-Concepts/tree/main/Aura/design-video)
 
 ---
 
-## Limitations & future scope
-
-### Directional audio (explored, not in demo UI)
-Early code computes azimuth in the audio path; UI does not show world-locked sound pins. See the [design video](https://github.com/RDX-Rajat-Savdekar/Manim-DSA-SD-Concepts/tree/main/Aura/design-video) for the rejected-alternative story.
-
-### Emergency awareness mode (planned)
-Detect urgent sounds (alarms, glass break, distress) and surface immediate guidance + optional emergency call flow.
-
-### Expanded sound library
-More environmental classes and context-aware alerts.
-
----
-
-## Related repos
-
-| Repo | What |
-|------|------|
-| **[Manim-DSA-SD-Concepts](https://github.com/RDX-Rajat-Savdekar/Manim-DSA-SD-Concepts)** | System design video, Manim scenes, VO pipeline |
-| **Aura/design-video** | ~9 min walkthrough source ([README](https://github.com/RDX-Rajat-Savdekar/Manim-DSA-SD-Concepts/blob/main/Aura/design-video/README.md)) |
-
----
-
-## Acknowledgements
-
-Hackathon hosts: **LA Tech Week** · **USC Information Sciences Institute (ISI)** · **Lovable**
+<p align="center">
+  <sub>LA Tech Week · USC ISI · Lovable</sub>
+</p>
