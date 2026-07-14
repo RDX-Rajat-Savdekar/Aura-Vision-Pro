@@ -1,10 +1,4 @@
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=3KEH2BCODBo">
-    <img src="docs/assets/video-design-thumb.jpg" alt="Aura system design walkthrough on YouTube" width="720" />
-  </a>
-</p>
-
-<p align="center">
   <strong>Aura</strong> — live captions + sound alerts on Apple Vision Pro · <strong>100% on-device</strong>
   <br />
   <sub>24 h hackathon · LA Tech Week / USC ISI · Oct 2025 · <strong>2nd place</strong></sub>
